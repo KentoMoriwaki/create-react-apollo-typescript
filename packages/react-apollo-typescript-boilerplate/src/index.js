@@ -16,13 +16,10 @@ watcher.on("ready", () => {
   });
 });
 
-const mode =
-  process.env.NODE_ENV === "production" ? "production" : "development";
-
 serve({
   config: {
     ...config,
-    mode
+    mode: "development"
   },
   add(app, middleware, options) {
     middleware.webpack();
