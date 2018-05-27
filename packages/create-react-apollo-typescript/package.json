@@ -1,0 +1,9 @@
+{
+  "name": "@kentomoriwaki/create-react-apollo-typescript",
+  "version": "0.1.0",
+  "main": "index.js",
+  "repository": "https://github.com/KentoMoriwaki/create-react-apollo-typescript/packages/create-react-apollo-typescript",
+  "author": "KentoMoriwaki <kento@wantedly.com>",
+  "license": "MIT",
+  "bin": "./index.js"
+}

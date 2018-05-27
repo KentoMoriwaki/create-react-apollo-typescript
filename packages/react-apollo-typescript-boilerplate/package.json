@@ -1,0 +1,28 @@
+{
+  "name": "@kentomoriwaki/react-apollo-typescript-boilerplate",
+  "version": "0.1.0",
+  "main": "src/index.js",
+  "repository": "https://github.com/KentoMoriwaki/create-react-apollo-typescript/packages/react-apollo-typescript-boilerplate",
+  "author": "KentoMoriwaki <kento@wantedly.com>",
+  "license": "MIT",
+  "bin": "./index.js",
+  "scripts": {
+    "start": "node src/index.js"
+  },
+  "dependencies": {
+    "react": "^16.4.0",
+    "react-dom": "^16.4.0",
+    "react-hot-loader": "^4.2.0"
+  },
+  "devDependencies": {
+    "@babel/core": "v7.0.0-beta.49",
+    "@babel/preset-env": "v7.0.0-beta.49",
+    "@babel/preset-react": "v7.0.0-beta.49",
+    "@babel/preset-stage-3": "v7.0.0-beta.49",
+    "@babel/preset-typescript": "v7.0.0-beta.49",
+    "babel-loader": "next",
+    "webpack": "^4.9.1",
+    "webpack-command": "^0.2.0",
+    "webpack-serve": "^1.0.2"
+  }
+}
