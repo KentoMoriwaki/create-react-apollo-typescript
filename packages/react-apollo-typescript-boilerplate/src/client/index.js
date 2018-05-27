@@ -1,4 +1,17 @@
 import React from "react";
 import ReactDOM from "react-dom";
+import ApolloClient from "apollo-boost";
+import { ApolloProvider } from "react-apollo";
 
-ReactDOM.render(<h1>Hello, World?????</h1>, document.getElementById("root"));
+import Books from "./Books";
+
+const client = new ApolloClient({
+  uri: "/graphql"
+});
+
+const App = () => (
+  <ApolloProvider client={client}>
+    <Books />
+  </ApolloProvider>
+);
+ReactDOM.render(<App />, document.getElementById("root"));
