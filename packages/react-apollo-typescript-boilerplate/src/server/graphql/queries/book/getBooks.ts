@@ -2,7 +2,7 @@ import gql from "graphql-tag";
 
 export const getBooksQuery = gql`
   extend type Query {
-    getBooks: [Book]
+    getBooks: [Book!]!
   }
 `;
 

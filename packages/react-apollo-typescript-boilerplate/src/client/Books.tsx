@@ -8,7 +8,7 @@ class QueryGetBooks extends Query<GetBooksQuery> {}
 
 const query = gql`
   query GetBooks {
-    books {
+    getBooks {
       title
       author
     }
@@ -21,7 +21,7 @@ const Books: React.SFC = () => (
       if (loading) return <p>Loading...</p>;
       if (error) return <p>Error :(</p>;
 
-      return data!.books.map(book => (
+      return data!.getBooks.map(book => (
         <div key={book.title}>
           <p>{`${book.title}: ${book.author}`}</p>
         </div>

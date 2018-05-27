@@ -2,7 +2,7 @@
 //  This file was automatically generated and should not be edited.
 
 export interface GetBooksQuery {
-  books:  Array< {
+  getBooks:  Array< {
     title: string,
     author: string,
   } >,
