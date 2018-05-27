@@ -1,0 +1,3 @@
+{
+  "extends": "./packages/react-apollo-typescript-boilerplate/tsconfig.json"
+}

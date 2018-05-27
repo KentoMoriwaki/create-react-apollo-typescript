@@ -7,9 +7,10 @@
   "license": "MIT",
   "bin": "./index.js",
   "scripts": {
-    "start": "babel-node --no-babelrc --presets @babel/preset-env src/index.js",
+    "start": "babel-node --no-babelrc --extensions .js,.ts --presets @babel/preset-env,@babel/preset-typescript src/index.js",
     "build": "webpack --run-prod",
-    "serve": "NODE_ENV=production babel-node --no-babelrc --presets @babel/preset-env src/server/index.js"
+    "serve": "NODE_ENV=production babel-node --no-babelrc --extensions .js,.ts --presets @babel/preset-env,@babel/preset-typescript src/server/index.ts",
+    "tsc": "tsc --noEmit -p ."
   },
   "dependencies": {
     "apollo-boost": "^0.1.6",
@@ -35,8 +36,18 @@
     "@babel/preset-react": "v7.0.0-beta.49",
     "@babel/preset-stage-3": "v7.0.0-beta.49",
     "@babel/preset-typescript": "v7.0.0-beta.49",
+    "@types/ejs": "^2.5.1",
+    "@types/koa": "^2.0.45",
+    "@types/koa-bodyparser": "^4.2.0",
+    "@types/koa-router": "^7.0.28",
+    "@types/koa-static": "^4.0.0",
+    "@types/mz": "^0.0.32",
+    "@types/prop-types": "^15.5.3",
+    "@types/react": "^16.3.14",
+    "@types/react-dom": "^16.0.5",
     "babel-loader": "next",
     "chokidar": "^2.0.3",
+    "typescript": "^2.8.3",
     "webpack": "^4.9.1",
     "webpack-command": "^0.2.0",
     "webpack-manifest-plugin": "^2.0.3",
