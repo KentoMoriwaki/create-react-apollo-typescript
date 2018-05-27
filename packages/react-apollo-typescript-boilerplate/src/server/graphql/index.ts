@@ -1,9 +1,9 @@
 import gql from "graphql-tag";
 import { makeExecutableSchema } from "graphql-tools";
 
-import Book from "./types/book/Book";
-import getBooks, { getBooksQuery } from "./queries/book/getBooks";
-import createBook, { createBookMutation } from "./mutations/book/createBook";
+import types from "./types";
+import { mutations, resolvers as mutationResolvers } from "./mutations";
+import { queries, resolvers as queryResolvers } from "./queries";
 
 const rootSchema = gql`
   schema {
@@ -21,13 +21,13 @@ const rootSchema = gql`
 `;
 
 const schema = makeExecutableSchema({
-  typeDefs: [rootSchema, Book, getBooksQuery, createBookMutation],
+  typeDefs: [rootSchema, ...types, ...queries, ...mutations],
   resolvers: {
     Query: {
-      getBooks
+      ...queryResolvers
     },
     Mutation: {
-      createBook
+      ...mutationResolvers
     }
   }
 });
