@@ -1,8 +1,8 @@
 import path from "path";
 import fs from "mz/fs";
 import koa from "koa";
-import koaRouter from "koa-router"; // koa-router@next
-import koaBody from "koa-bodyparser"; // koa-bodyparser@next
+import koaRouter from "koa-router";
+import koaBody from "koa-bodyparser";
 import { graphqlKoa, graphiqlKoa } from "apollo-server-koa";
 import ejs from "ejs";
 
