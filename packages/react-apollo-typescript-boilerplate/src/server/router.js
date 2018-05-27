@@ -13,6 +13,7 @@ const HTML_PATH = path.resolve(__dirname, "./index.ejs");
 router.get("/", async (ctx, next) => {
   const body = await fs.readFile(HTML_PATH, "utf8");
   ctx.body = ejs.render(body);
+  ctx.body = "Hhell";
 });
 router.get("/graphiql", graphiqlKoa({ endpointURL: "/graphql" }));
 
