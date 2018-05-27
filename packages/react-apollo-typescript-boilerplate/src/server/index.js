@@ -1,6 +1,6 @@
-const koa = require("koa");
+import koa from "koa";
 
-const router = require("./router");
+import router from "./router";
 
 const app = new koa();
 const PORT = 3000;

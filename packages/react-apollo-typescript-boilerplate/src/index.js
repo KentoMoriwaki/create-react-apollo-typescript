@@ -1,6 +1,6 @@
-const path = require("path");
-const serve = require("webpack-serve");
-const chokidar = require("chokidar");
+import path from "path";
+import serve from "webpack-serve";
+import chokidar from "chokidar";
 
 const config = require(path.resolve(__dirname, `../webpack.config.js`));
 
@@ -29,7 +29,7 @@ serve({
     middleware.content();
 
     app.use(async (ctx, next) => {
-      const router = require("./server/router");
+      const router = require("./server/router").default;
       await router.routes()(ctx, next);
       // await router.allowedMethods(ctx, next);
     });

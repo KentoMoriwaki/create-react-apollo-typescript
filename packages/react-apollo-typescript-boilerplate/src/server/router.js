@@ -1,10 +1,10 @@
-const path = require("path");
-const fs = require("mz/fs");
-const koa = require("koa");
-const koaRouter = require("koa-router"); // koa-router@next
-const koaBody = require("koa-bodyparser"); // koa-bodyparser@next
-const { graphqlKoa, graphiqlKoa } = require("apollo-server-koa");
-const ejs = require("ejs");
+import path from "path";
+import fs from "mz/fs";
+import koa from "koa";
+import koaRouter from "koa-router"; // koa-router@next
+import koaBody from "koa-bodyparser"; // koa-bodyparser@next
+import { graphqlKoa, graphiqlKoa } from "apollo-server-koa";
+import ejs from "ejs";
 
 const router = new koaRouter();
 
@@ -13,8 +13,8 @@ const HTML_PATH = path.resolve(__dirname, "./index.ejs");
 router.get("/", async (ctx, next) => {
   const body = await fs.readFile(HTML_PATH, "utf8");
   ctx.body = ejs.render(body);
-  ctx.body = "Hhell";
 });
+
 router.get("/graphiql", graphiqlKoa({ endpointURL: "/graphql" }));
 
-module.exports = router;
+export default router;
