@@ -4,7 +4,7 @@ import chokidar from "chokidar";
 
 const config = require(path.resolve(__dirname, `../webpack.config.js`));
 
-const watcher = chokidar.watch(path.resolve(__dirname, "./server/*"));
+const watcher = chokidar.watch(path.resolve(__dirname, "./server/**/*"));
 
 // Watch server file changes
 watcher.on("ready", () => {

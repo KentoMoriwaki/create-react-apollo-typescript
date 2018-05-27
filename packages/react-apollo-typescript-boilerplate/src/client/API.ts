@@ -3,7 +3,7 @@
 
 export interface GetBooksQuery {
   books:  Array< {
-    title: string | null,
-    author: string | null,
-  } | null > | null,
+    title: string,
+    author: string,
+  } >,
 };

@@ -10,7 +10,7 @@ yarn start
 
 ## Update GraphQL schema
 
-When graphql endpoints are updated, run this command.
+When graphql endpoints are updated, run this command. (Be sure to run `yarn start` first)
 
 ```
 yarn run update-schema

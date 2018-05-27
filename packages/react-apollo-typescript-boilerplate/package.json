@@ -12,8 +12,8 @@
     "serve": "NODE_ENV=production babel-node --no-babelrc --extensions .js,.ts --presets @babel/preset-env,@babel/preset-typescript src/server/index.ts",
     "tsc": "tsc --noEmit -p .",
     "update-api": "yarn run update-schema && yarn run update-types",
-    "update-schema": "apollo-codegen introspect-schema http://localhost:8080/graphql --output src/server/schema.json",
-    "update-types": "apollo-codegen generate src/client/** --schema src/server/schema.json --target typescript --output src/client/API.ts"
+    "update-schema": "apollo-codegen introspect-schema http://localhost:8080/graphql --output schema.json",
+    "update-types": "apollo-codegen generate src/client/** --schema schema.json --target typescript --output src/client/API.ts"
   },
   "dependencies": {
     "apollo-boost": "^0.1.6",

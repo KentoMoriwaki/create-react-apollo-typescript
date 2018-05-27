@@ -3,8 +3,9 @@ import fs from "mz/fs";
 import koaRouter from "koa-router";
 import koaBody from "koa-bodyparser";
 import { graphqlKoa, graphiqlKoa } from "apollo-server-koa";
-import { makeExecutableSchema } from "graphql-tools";
 import ejs from "ejs";
+
+import schema from "./graphql";
 
 const dev = process.env.NODE_ENV !== "production";
 
@@ -31,29 +32,6 @@ const router = new koaRouter();
 
 router.get("/", async ctx => {
   ctx.body = await getHTML(dev);
-});
-
-const books = [
-  {
-    title: "Harry Potter and the Sorcerer's stone",
-    author: "J.K. Rowling"
-  },
-  {
-    title: "Jurassic Park",
-    author: "Michael Crichton"
-  }
-];
-// The GraphQL schema in string form
-const typeDefs = `
-  type Query { books: [Book] }
-  type Book { title: String, author: String }
-`;
-const resolvers = {
-  Query: { books: () => books }
-};
-const schema = makeExecutableSchema({
-  typeDefs,
-  resolvers
 });
 
 router.use("/graphql", koaBody());
